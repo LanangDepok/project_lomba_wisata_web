@@ -2,6 +2,7 @@ Cara update project
 - git checkout main -> pindah ke branch utama
 - git pull -> buat ngecek pembaruan terakhir
 - git branch 'nama_branch' -> buat branch baru, deskripsinya usahain jelas sesuai fitur yg mau dibuat
+- git checkout 'nama_branch_barusan' -> pindah ke git branch yang baru dibuat
 
   //bisa ulangi langkah ini berkali-kali jika banyak perubahan
 - git add . -> nyimpen sementara di staging
