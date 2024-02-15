@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DestinationController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+Route::controller(DestinationController::class)->group(function () {
+    Route::get('/', 'getDestinations');
+    Route::get('/destination/create', 'createDestination');
+    Route::get('/destination/{destination}', 'getDestination');
+    Route::post('/destination/store', 'storeDestination');
+    Route::get('/destination/{destination}/edit', 'editDestination');
+    Route::put('/destination/update/{destination}', 'updateDestination');
+    Route::delete('/destination/{destination}', 'deleteDestination');
 });
