@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DestinationController;
+use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,3 +28,7 @@ Route::controller(DestinationController::class)->group(function () {
     Route::put('/destination/update/{destination}', 'updateDestination');
     Route::delete('/destination/{destination}', 'deleteDestination');
 });
+
+Route::get('/login', [LoginController::class, 'Login'])->name('login');
+Route::post('/login', [LoginController::class, 'Authenticate']);
+Route::post('/logout', [LoginController::class, 'Logout']);
