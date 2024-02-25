@@ -61,11 +61,13 @@ class DestinationController extends Controller
 
         $this->destinationServiceInf->updateDestination($validated, $destination);
 
-        redirect('/');
+        return redirect('/');
     }
 
     public function deleteDestination(Destination $destination)
     {
         $this->destinationServiceInf->deleteDestination($destination);
+
+        return redirect('/');
     }
 }
