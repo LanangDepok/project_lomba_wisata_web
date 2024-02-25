@@ -25,7 +25,9 @@ class LoginController extends Controller
             return redirect()->intended('/');
         }
 
-        return back()->with('loginError', 'Email atau Password salah');
+        return response()->view('login', [
+            'error' => 'Email atau Password salah!!'
+        ]);
     }
 
     public function logout(Request $request)
