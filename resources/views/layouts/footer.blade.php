@@ -1,4 +1,4 @@
-<!-- Footer-->
+<!-- Footer
         <footer class="footer bg-light">
             <div class="container">
                 <div class="row">
@@ -29,4 +29,4 @@
                     </div>
                 </div>
             </div>
-        </footer>
+        </footer> -->

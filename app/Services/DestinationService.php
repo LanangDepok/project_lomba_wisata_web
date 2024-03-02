@@ -24,7 +24,7 @@ class DestinationService implements DestinationServiceInf
 
     public function updateDestination($validated, $destination)
     {
-        if ($validated['image']) {
+        if (isset($validated['image'])) {
             Storage::disk('public')->delete($destination->image);
             $storeImage = Storage::disk('public')->put('image', $validated['image']);
             $validated['image'] = $storeImage;
