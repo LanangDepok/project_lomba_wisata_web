@@ -1,9 +1,9 @@
 <!-- Navigation-->
-<nav class="navbar navbar-expand-lg navbar-light bg-light static-top">
+<nav class="navbar navbar-expand-lg navbar-light static-top">
     <div class="container">
         <!-- Brand/logo -->
         <a class="navbar-brand" href="#!"
-            style="color: #007BFF; font-weight: bold; font-size: 28px; text-decoration: underline;">
+            style="color: #FFF; font-weight: bold; font-size: 28px; text-decoration: underline;">
             PESONA JATIM
         </a>
 

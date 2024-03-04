@@ -13,10 +13,6 @@
                     <p class="lead mb-5 animate__animated animate__fadeIn animate__delay-1s">Discover the beauty and
                         charm of East Java Province. Explore breathtaking landscapes, rich culture, and unforgettable
                         experiences.</p>
-
-                    <!-- Add a call-to-action button with a subtle animation -->
-                    <a class="btn btn-primary btn-lg animate__animated animate__fadeIn animate__delay-2s"
-                        href="#explore">Explore Now</a>
                 </div>
             </div>
         </div>
@@ -98,8 +94,7 @@
         </div>
     </section>
 
-    <!-- list destination -->
-    <!-- list destination -->
+
     <!-- list destination -->
     <section class="container mt-4">
         @can('admin')
@@ -112,28 +107,30 @@
                     <div class="card border-0 shadow-sm" data-aos="fade-up">
                         <form action="/destination/{{ $destination->id }}" method="POST">
                             @csrf
-                            <img src="{{ asset('storage/' . $destination->image) }}" class="card-img-top rounded-3"
-                                alt="{{ $destination->name }}">
+                            <div style="height: 200px; overflow: hidden;">
+                                <img src="{{ asset('storage/' . $destination->image) }}" class="card-img-top rounded-3" alt="{{ $destination->name }}" style="object-fit: cover; width: 100%; height: 100%;">
+                            </div>
                             <div class="card-body">
                                 <h5 class="card-title text-center fw-bold">{{ $destination->name }}</h5>
-                                <p class="card-text">
-                                    {{ strlen($destination->description) > 10 ? substr($destination->description, 0, 150) . '...' : $destination->description }}
+                                <p class="card-text" style="height: 70px; overflow: hidden; text-overflow: ellipsis;">
+                                    {{ $destination->description }}
                                 </p>
                             </div>
                             <ul class="list-group list-group-flush">
                                 <li class="list-group-item border-0">Lokasi: {{ $destination->location }}</li>
                                 <!-- Add more details as needed -->
                             </ul>
-                            <div class="card-footer bg-white border-0 text-end">
+                            <div class="card-footer bg-white border-0 text-center"> <!-- Center-align buttons -->
                                 <small class="text-muted">{{ $destination->created_at->diffForHumans() }}</small>
+                                <div class="mt-3"> <!-- Add margin-top for spacing -->
+                                    <a href="/destination/{{ $destination->id }}" class="btn btn-primary btn-sm mx-1">Detail</a>
+                                    @can('admin')
+                                        <a href="/destination/{{ $destination->id }}/edit" class="btn btn-warning btn-sm mx-1">Edit</a>
+                                        @method('DELETE')
+                                        <button class="btn btn-danger btn-sm mx-1" type="button" onclick="confirmDelete('{{ $destination->id }}')">Delete</button>
+                                    @endcan
+                                </div>
                             </div>
-                            <a href="/destination/{{ $destination->id }}" class="btn btn-primary btn-sm">Detail</a>
-                            @can('admin')
-                                <a href="/destination/{{ $destination->id }}/edit" class="btn btn-warning btn-sm">Edit</a>
-                                @method('DELETE')
-                                <button class="btn btn-danger btn-sm" type="button"
-                                    onclick="confirmDelete('{{ $destination->id }}')">Delete</button>
-                            @endcan
                         </form>
                     </div>
                 </div>
@@ -174,49 +171,7 @@
         <div class="container position-relative">
             <div class="row justify-content-center">
                 <div class="col-xl-6">
-                    <h2 class="mb-4">Ready to get started? Sign up now!</h2>
-                    <!-- Signup form-->
-                    <!-- * * * * * * * * * * * * * * *-->
-                    <!-- * * SB Forms Contact Form * *-->
-                    <!-- * * * * * * * * * * * * * * *-->
-                    <!-- This form is pre-integrated with SB Forms.-->
-                    <!-- To make this form functional, sign up at-->
-                    <!-- https://startbootstrap.com/solution/contact-forms-->
-                    <!-- to get an API token!-->
-                    <form class="form-subscribe" id="contactFormFooter" data-sb-form-api-token="API_TOKEN">
-                        <!-- Email address input-->
-                        <div class="row">
-                            <div class="col">
-                                <input class="form-control form-control-lg" id="emailAddressBelow" type="email"
-                                    placeholder="Email Address" data-sb-validations="required,email" />
-                                <div class="invalid-feedback text-white" data-sb-feedback="emailAddressBelow:required">
-                                    Email Address is required.</div>
-                                <div class="invalid-feedback text-white" data-sb-feedback="emailAddressBelow:email">Email
-                                    Address Email is not valid.</div>
-                            </div>
-                            <div class="col-auto"><button class="btn btn-primary btn-lg disabled" id="submitButton"
-                                    type="submit">Submit</button></div>
-                        </div>
-                        <!-- Submit success message-->
-                        <!---->
-                        <!-- This is what your users will see when the form-->
-                        <!-- has successfully submitted-->
-                        <div class="d-none" id="submitSuccessMessage">
-                            <div class="text-center mb-3">
-                                <div class="fw-bolder">Form submission successful!</div>
-                                <p>To activate this form, sign up at</p>
-                                <a class="text-white"
-                                    href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
-                            </div>
-                        </div>
-                        <!-- Submit error message-->
-                        <!---->
-                        <!-- This is what your users will see when there is-->
-                        <!-- an error submitting the form-->
-                        <div class="d-none" id="submitErrorMessage">
-                            <div class="text-center text-danger mb-3">Error sending message!</div>
-                        </div>
-                    </form>
+                    <h2 class="mb-4">Parawisata Provinsi Jawa Timur</h2>
                 </div>
             </div>
         </div>
