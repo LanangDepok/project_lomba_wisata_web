@@ -117,7 +117,7 @@
                                 </p>
                             </div>
                             <ul class="list-group list-group-flush">
-                                <li class="list-group-item border-0">Lokasi: {{ $destination->location }}</li>
+                                <li class="list-group-item border-0">Lokasi: </br>{{ $destination->location }}</li>
                                 <!-- Add more details as needed -->
                             </ul>
                             <div class="card-footer bg-white border-0 text-center"> <!-- Center-align buttons -->
@@ -137,35 +137,7 @@
             @endforeach
         </div>
     </section>
-
-    <section class="testimonials text-center">
-        <div class="container">
-            <h2 class="mb-5">Team</h2>
-            <div class="row">
-                <div class="col-lg-4">
-                    <div class="testimonial-item mx-auto mb-5 mb-lg-0">
-                        <img class="img-fluid rounded-circle mb-3" src="assets/img/testimonials-1.jpg" alt="..." />
-                        <h5>Kevin Risqi Rachmadi</h5>
-                        <p class="font-weight-light mb-0">POLITEKNIK NEGERI JAKARTA</p>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="testimonial-item mx-auto mb-5 mb-lg-0">
-                        <img class="img-fluid rounded-circle mb-3" src="assets/img/testimonials-2.jpg" alt="..." />
-                        <h5>Bagas Rizkiyanto</h5>
-                        <p class="font-weight-light mb-0">POLITEKNIK NEGERI JAKARTA</p>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="testimonial-item mx-auto mb-5 mb-lg-0">
-                        <img class="img-fluid rounded-circle mb-3" src="assets/img/testimonials-3.jpg" alt="..." />
-                        <h5>Edgar Hadhyra Julio</h5>
-                        <p class="font-weight-light mb-0">POLITEKNIK NEGERI JAKARTA</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+</br>
     <!-- Call to Action-->
     <section class="call-to-action text-white text-center" id="signup">
         <div class="container position-relative">
